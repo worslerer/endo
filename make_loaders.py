@@ -4,8 +4,7 @@ from torch.utils.data import DataLoader
 from hf_dataset import HFDropDataset
 
 def get_loaders(target_classes, batch_size=32, img_size=224):
-    ds = load_dataset("akshaybengani/hyper-kvasir", split="train")
-
+    ds = load_dataset("iamsouravbanerjee/Hyper-Kvasir", split="train")
     # podział bardzo prosty: 90% / 10%
     train_size = int(0.9 * len(ds))
     train_ds_raw = ds.select(range(train_size))
