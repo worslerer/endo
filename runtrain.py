@@ -1,6 +1,6 @@
 # run_train.py
 import torch
-from wrapper import ModelWrapper
+from model_creator import ModelWrapper
 from trainer import Trainer
 from make_loaders import get_loaders
 
