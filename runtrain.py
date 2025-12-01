@@ -2,16 +2,18 @@
 import torch
 from model_creator import ModelWrapper
 from trainer import Trainer
-from make_loaders import get_loaders
+#from make_loaders import get_loaders
+#from loaders import get_loaders
+from make_hk_loaders import get_hk_loaders
 
 device = "cuda"
 
 TARGET_CLASSES = ["ulcer", "polyp", "blood"]
+train_loader, val_loader = get_hk_loaders(root="hyperkvasir/pathology", batch_size=32)
 
-train_loader, val_loader = get_loaders(
-    target_classes=TARGET_CLASSES,
-    batch_size=32,
-    img_size=224
+train_loader, val_loader = get_hk_loaders(
+    root="hyperkvasir/pathology",
+    batch_size=32
 )
 
 MODELS = ["resnet50", "mobilenetv2", "densenet121"]
